@@ -49,3 +49,7 @@ class Blog(BaseModel):
 @app.post('/blog')
 def create(request: Blog):
     return {'data': f'Blog is created with title as {request.title}'}
+
+@app.get('/getPublishData')
+def publishData():
+    return {'data': 'view all published data for this profile'}
