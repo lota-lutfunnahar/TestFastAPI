@@ -1,8 +1,7 @@
 from typing import Union, Optional
 
 from fastapi import FastAPI
-from pydantic import BaseModel
-
+from blog import schemas
 
 app = FastAPI()
 
@@ -28,7 +27,7 @@ def show(id:int):
 
 @app.get('/blog/{id}/comments')
 def comments(id):
-    return {'data':{'1','2'}}
+    return {'data':{'1','2','3','4','5'}}
 
 
 @app.get('/blog')
@@ -40,16 +39,15 @@ def allBlog(limit=10, published : bool = True, sort: Optional[str] = None):
         return {'data': 'All the blogs'}
 
 
-class Blog(BaseModel):
-    title: str
-    body: str
-    published: Optional[bool]
-
-
 @app.post('/blog')
-def create(request: Blog):
+def create(request: schemas.Blog):
     return {'data': f'Blog is created with title as {request.title}'}
+
 
 @app.get('/getPublishData')
 def publishData():
-    return {'data': 'view all published data for this profile'}
+    return {'data': 'view all published data'}
+    
+@app.get('/getview')
+def view():
+    return 'dfgdg' 
