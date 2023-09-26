@@ -1,5 +1,5 @@
 # TestFastAPI
-## running application from project localtion 
+## Running application from project localtion 
 
 ```
 uvicorn main:app --reload
