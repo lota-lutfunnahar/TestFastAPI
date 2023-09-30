@@ -9,7 +9,7 @@ uvicorn main:app --reload
 uvicorn blog.main:app --reload
 ```
 
-## Pip install 
+## Pip Install 
 ```
 pip3 install -r requirement.txt
 ```
